@@ -30,7 +30,7 @@ void HeatZ::begin(uint8_t pin1, uint8_t pin2, hzOrder_t defaultOrder, String nam
 
 void HeatZ::begin(uint8_t pin1, uint8_t pin2, hzOrder_t defaultOrder) { begin(pin1, pin2, defaultOrder, "room"); }
 
-void HeatZ::begin(uint8_t pin1, uint8_t pin2, String name) { begin(pin1, pin2, HORSGEL, "room"); }
+void HeatZ::begin(uint8_t pin1, uint8_t pin2, String name) { begin(pin1, pin2, HORSGEL, name); }
 
 void HeatZ::begin(uint8_t pin1, uint8_t pin2) { begin(pin1, pin2, HORSGEL, "room"); }
 
