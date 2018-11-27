@@ -73,13 +73,12 @@ And swap to a different order given by `changeOrder` function for a duration.
 
 ```C++
 int changeOrder(hzOrder order, int duration, hzPeriod_t unit); 
-
+```
 Parameters:
 * `order` to swap to
 * `duration` to keep this order on
 * `unit` for the duration
 
-```
 ### Events
 
 ```C++
