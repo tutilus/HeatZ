@@ -45,6 +45,7 @@ public:
     // Setters
     void setName(String);
     void setDefaultOrder(hzOrder_t);
+    void setTimestamp(String);
 
     // Getters
     String getName();
@@ -53,7 +54,9 @@ public:
     hzOrder_t getDefaultOrder();
     String getDefaultOrderLabel();
     hzPeriod_t getPeriodUnit();
-
+    String getTimestamp();
+    int getDuration();
+    hzPeriod_t getUnit();
     uint8_t getPinValue(hzPin_t);
     uint8_t getPinLabel(hzPin_t);
 
@@ -63,7 +66,9 @@ private:
     uint8_t pins[2];
     uint8_t states[2];
     String name;  
-
+    String timestamp;
+    int duration;   // Time to wait before the end of the mode
+    
     // Life cycle of the Heating
     hzPeriod_t periodUnit;
     int leftover;  // Time left in the mode when isn't default

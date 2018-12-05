@@ -18,12 +18,14 @@ onChange KEYWORD2
 changeOrder KEYWORD2
 setName KEYWORD2
 setDefaultOrder KEYWORD2
+setTimestamp KEYWORD2
 getName KEYWORD2
 getOrder KEYWORD2
 getOrderLabel KEYWORD2
 getDefaultOrder KEYWORD2
 getDefaultOrderLabel KEYWORD2
 getPeriodUnit KEYWORD2
+getTimestamp KEYWORD2
 getPinValue KEYWORD2
 getPinLabel KEYWORD2
 

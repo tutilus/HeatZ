@@ -25,6 +25,7 @@ void HeatZ::begin(uint8_t pin1, uint8_t pin2, hzOrder_t defaultOrder, String nam
     pinMode(pin2, OUTPUT);
     setName(name);
     setDefaultOrder(defaultOrder);
+    setTimestamp("");
     toDefault();
 }
 
@@ -36,6 +37,7 @@ void HeatZ::begin(uint8_t pin1, uint8_t pin2) { begin(pin1, pin2, HORSGEL, "room
 
 void HeatZ::toDefault(void) {
     setOrder(this->defaultOrder);
+    this->duration = 0;
 }
 
 void HeatZ::onChange(void (*function)(HeatZ*)) {
@@ -57,6 +59,9 @@ void HeatZ::wait(int duration, hzPeriod_t periodUnit) {
     static int DefaultPeriod[] = { 1, 60, 300};
     int period; // period to wait for.
 
+    // Save duration for information
+    if (this->duration == 0) this->duration = duration;
+
     // Save periodUnit for use into the callback function.
     this->periodUnit = periodUnit;
     
@@ -71,7 +76,7 @@ void HeatZ::wait(int duration, hzPeriod_t periodUnit) {
             if (duration % DefaultPeriod[periodUnit] > 0)
                 period = duration % DefaultPeriod[periodUnit];
             else
-                period = DefaultPeriod[periodUnit];    bool finished(void);
+                period = DefaultPeriod[periodUnit];
 
     this->leftover = duration - period;
     switch (periodUnit) {
@@ -114,6 +119,20 @@ void HeatZ::changeOrder(hzOrder_t order, int duration, hzPeriod_t unit) {
     setOrder(order);
     wait(duration, unit);
 }
+
+/**
+ * Timestamp getter/setter
+ * ESP8266 doesn't manage time. So, the Time (using NTP for example) have to be
+ * declare outside this class, but this setter/getter allow to keep the data
+ * inside the instance.
+ */
+void HeatZ::setTimestamp(String stamp) { this->timestamp = stamp; }
+
+String HeatZ::getTimestamp() { return this->timestamp; }
+
+int HeatZ::getDuration() { return this->duration; }
+
+hzPeriod_t HeatZ::getUnit() { return this->periodUnit; }
 
 void HeatZ::setOrder(hzOrder_t code) {
     static uint8_t WavePlus[] =  { LOW, LOW, HIGH, HIGH };
