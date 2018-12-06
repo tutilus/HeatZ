@@ -59,9 +59,6 @@ void HeatZ::wait(int duration, hzPeriod_t periodUnit) {
     static int DefaultPeriod[] = { 1, 60, 300};
     int period; // period to wait for.
 
-    // Save duration for information
-    if (this->duration == 0) this->duration = duration;
-
     // Save periodUnit for use into the callback function.
     this->periodUnit = periodUnit;
     
@@ -117,6 +114,8 @@ int HeatZ::timeLeftover(void) { return this->leftover; }
 
 void HeatZ::changeOrder(hzOrder_t order, int duration, hzPeriod_t unit) {
     setOrder(order);
+    // Save duration for the first call
+    this->duration = duration;
     wait(duration, unit);
 }
 
