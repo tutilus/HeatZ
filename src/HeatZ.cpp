@@ -134,8 +134,8 @@ int HeatZ::getDuration() { return this->duration; }
 hzPeriod_t HeatZ::getUnit() { return this->periodUnit; }
 
 void HeatZ::setOrder(hzOrder_t code) {
-    static uint8_t WavePlus[] =  { LOW, LOW, HIGH, HIGH };
-    static uint8_t WaveMinus[] = { LOW, HIGH, LOW, HIGH };
+    static uint8_t WavePlus[] =  { LOW, HIGH, LOW, HIGH };
+    static uint8_t WaveMinus[] = { LOW, LOW, HIGH, HIGH };
     
     if (code >= 0 && code < ORDER_NB) {
         this->order = code;
