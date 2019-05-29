@@ -10,24 +10,24 @@
 # Methods and Functions (KEYWORD2)
 #######################################
 
-begin KEYWORD2
-onChange KEYWORD2
-toDefault KEYWORD2
-isDefaultOrder KEYWORD2
-onChange KEYWORD2
-changeOrder KEYWORD2
-setName KEYWORD2
-setDefaultOrder KEYWORD2
-setTimestamp KEYWORD2
-getName KEYWORD2
-getOrder KEYWORD2
-getOrderLabel KEYWORD2
-getDefaultOrder KEYWORD2
-getDefaultOrderLabel KEYWORD2
-getPeriodUnit KEYWORD2
-getTimestamp KEYWORD2
-getPinValue KEYWORD2
-getPinLabel KEYWORD2
+begin	KEYWORD2
+onChange	KEYWORD2
+toDefault	KEYWORD2
+isDefaultOrder	KEYWORD2
+onChange	KEYWORD2
+changeOrder	KEYWORD2
+setName	KEYWORD2
+setDefaultOrder	KEYWORD2
+setTimestamp	KEYWORD2
+getName	KEYWORD2
+getOrder	KEYWORD2
+getOrderLabel	KEYWORD2
+getDefaultOrder	KEYWORD2
+getDefaultOrderLabel	KEYWORD2
+getPeriodUnit	KEYWORD2
+getTimestamp	KEYWORD2
+getPinValue	KEYWORD2
+getPinLabel	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
@@ -39,12 +39,12 @@ HeatZ	KEYWORD2
 # Constants (LITERAL1)
 #######################################
 
-CONFORT LITERAL1
-HORSGEL LITERAL1
-ARRET LITERAL1
-ECO LITERAL1
-HOURS LITERAL1
-MINUTES LITERAL1
-SECONDS LITERAL1
-PIN1 LITERAL1
-PIN2 LITERAL1
+CONFORT	LITERAL1
+HORSGEL	LITERAL1
+ARRET	LITERAL1
+ECO	LITERAL1
+HOURS	LITERAL1
+MINUTES	LITERAL1
+SECONDS	LITERAL1
+PIN1	LITERAL1
+PIN2	LITERAL1
